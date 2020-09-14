@@ -6,7 +6,6 @@ import AppointmentsRepository from "../repositories/AppointmentsRepository";
 import CreateAppointmentService from "../services/CreateAppointmentService";
 
 const appointmentsRouter = Router();
-// Rota: Receber a request, chamar outro arquivo, devolver uma response
 
 appointmentsRouter.get("/", async (request, response) => {
   const appointmentRepository = getCustomRepository(AppointmentsRepository);
