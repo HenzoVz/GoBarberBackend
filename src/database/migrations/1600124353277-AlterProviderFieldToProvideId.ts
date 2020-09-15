@@ -12,7 +12,7 @@ export default class AlterProviderFieldToProvideId1600124353277
     await queryRunner.addColumn(
       "appointments",
       new TableColumn({
-        name: "provider_id",
+        name: "providerId",
         type: "uuid",
         isNullable: true,
       })
@@ -22,7 +22,7 @@ export default class AlterProviderFieldToProvideId1600124353277
       "appointments",
       new TableForeignKey({
         name: "AppointmentsProvider",
-        columnNames: ["provider_id"],
+        columnNames: ["providerId"],
         referencedColumnNames: ["id"],
         referencedTableName: "users",
         onDelete: "SET NULL",
@@ -34,7 +34,7 @@ export default class AlterProviderFieldToProvideId1600124353277
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropForeignKey("appointments", "AppointmentsProvider");
 
-    await queryRunner.dropColumn("appointments", "provider_id");
+    await queryRunner.dropColumn("appointments", "providerId");
 
     await queryRunner.addColumn(
       "appointments",
