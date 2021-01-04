@@ -35,7 +35,15 @@
     "camelcase": "off",
     "no-unused-vars": ["error", {
       "argsIgnorePattern": "_"
-    }]
+    }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "prefix": ["I"],
+        "format": ["PascalCase"]
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
